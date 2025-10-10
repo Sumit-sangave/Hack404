@@ -4,6 +4,7 @@ import { Themes } from "@/components/Themes";
 import { Registration } from "@/components/Registration";
 import { Team } from "@/components/Team";
 import { Footer } from "@/components/Footer";
+import { AdminLink } from "@/components/AdminLink";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Registration />
       <Team />
       <Footer />
+      <AdminLink />
     </div>
   );
 };
