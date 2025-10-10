@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const themes = [
   "Artificial Intelligence",
@@ -54,28 +55,48 @@ export const Registration = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const { error } = await supabase.from('registrations').insert([
+        {
+          team_name: formData.teamName,
+          leader_name: formData.leaderName,
+          email: formData.email,
+          phone: formData.phone,
+          member2: formData.member2 || null,
+          member3: formData.member3 || null,
+          member4: formData.member4 || null,
+          theme: formData.theme,
+          description: formData.description
+        }
+      ]);
 
-    toast.success("Registration successful! 🎉", {
-      description: "You'll receive a confirmation email shortly."
-    });
+      if (error) throw error;
 
-    setIsSubmitting(false);
-    
-    // Reset form
-    setFormData({
-      teamName: "",
-      leaderName: "",
-      email: "",
-      phone: "",
-      member2: "",
-      member3: "",
-      member4: "",
-      theme: "",
-      description: ""
-    });
-    setCompletedFields(new Set());
+      toast.success("Registration successful! 🎉", {
+        description: "Your team has been registered for the hackathon."
+      });
+
+      // Reset form
+      setFormData({
+        teamName: "",
+        leaderName: "",
+        email: "",
+        phone: "",
+        member2: "",
+        member3: "",
+        member4: "",
+        theme: "",
+        description: ""
+      });
+      setCompletedFields(new Set());
+    } catch (error: any) {
+      console.error('Registration error:', error);
+      toast.error("Registration failed", {
+        description: error.message || "Please try again later."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

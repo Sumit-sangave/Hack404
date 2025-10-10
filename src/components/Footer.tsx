@@ -70,9 +70,12 @@ export const Footer = () => {
                 <li>
                   <a href="#team" className="hover:text-primary transition-colors">Team</a>
                 </li>
-                <li>
-                  <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
-                </li>
+              <li>
+                <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
+              </li>
+              <li>
+                <a href="/admin" className="hover:text-primary transition-colors">Admin</a>
+              </li>
               </ul>
             </div>
 
