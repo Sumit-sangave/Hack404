@@ -84,16 +84,16 @@ export const Team = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <Card
               key={index}
-              className="group relative bg-card/80 backdrop-blur-sm border-2 border-border transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 pt-20 pb-6 px-6"
+              className="group relative bg-card/80 backdrop-blur-sm border-2 border-border transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 pt-16 pb-6 px-6"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Circular Image - Overlapping top */}
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2">
-                <div className="relative w-32 h-32 rounded-full border-4 border-card overflow-hidden shadow-xl group-hover:glow-cyan transition-all">
+              <div className="absolute -top-12 left-1/2 -translate-x-1/2">
+                <div className="relative w-24 h-24 rounded-full border-4 border-card overflow-hidden shadow-xl group-hover:glow-cyan transition-all">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -103,53 +103,48 @@ export const Team = () => {
               </div>
 
               {/* Content */}
-              <div className="text-center mt-4">
+              <div className="text-center mt-2">
                 {/* Name */}
-                <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-gradient transition-all">
+                <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-gradient transition-all">
                   {member.name}
                 </h3>
                 
                 {/* Role Badge */}
                 <div className="inline-block mb-4">
-                  <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary font-medium text-sm">
+                  <span className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary font-medium text-xs">
                     {member.role}
                   </span>
                 </div>
 
-                {/* Bio */}
-                <p className="text-sm text-muted-foreground mb-6 min-h-12">
-                  {member.bio}
-                </p>
-
                 {/* Social Links */}
-                <div className="flex gap-3 justify-center">
+                <div className="flex gap-2 justify-center">
                   <a
                     href={member.social.linkedin}
-                    className="w-10 h-10 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-9 h-9 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-5 h-5 text-muted-foreground group-hover/social:text-primary transition-colors" />
+                    <Linkedin className="w-4 h-4 text-muted-foreground group-hover/social:text-primary transition-colors" />
                   </a>
                   <a
                     href={`mailto:${member.social.email}`}
-                    className="w-10 h-10 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-9 h-9 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="Email"
                   >
-                    <Mail className="w-5 h-5 text-muted-foreground group-hover/social:text-accent transition-colors" />
+                    <Mail className="w-4 h-4 text-muted-foreground group-hover/social:text-accent transition-colors" />
                   </a>
                   <a
                     href="#"
-                    className="w-10 h-10 rounded-full bg-muted hover:bg-secondary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-9 h-9 rounded-full bg-muted hover:bg-secondary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="Instagram"
                   >
-                    <Instagram className="w-5 h-5 text-muted-foreground group-hover/social:text-secondary transition-colors" />
+                    <Instagram className="w-4 h-4 text-muted-foreground group-hover/social:text-secondary transition-colors" />
                   </a>
                   <a
                     href="#"
-                    className="w-10 h-10 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-9 h-9 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="Discord"
                   >
-                    <SiDiscord className="w-5 h-5 text-muted-foreground group-hover/social:text-accent transition-colors" />
+                    <SiDiscord className="w-4 h-4 text-muted-foreground group-hover/social:text-accent transition-colors" />
                   </a>
                 </div>
               </div>
