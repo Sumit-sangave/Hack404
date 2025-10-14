@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Instagram } from "lucide-react";
+import { SiDiscord } from "react-icons/si";
 
 const teamMembers = [
   {
@@ -83,56 +84,72 @@ export const Team = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {teamMembers.map((member, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-border card-hover"
+              className="group relative bg-card/80 backdrop-blur-sm border-2 border-border transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 pt-20 pb-6 px-6"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image Container */}
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
+              {/* Circular Image - Overlapping top */}
+              <div className="absolute -top-16 left-1/2 -translate-x-1/2">
+                <div className="relative w-32 h-32 rounded-full border-4 border-card overflow-hidden shadow-xl group-hover:glow-cyan transition-all">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-1 text-foreground group-hover:text-gradient transition-all">
+              <div className="text-center mt-4">
+                {/* Name */}
+                <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-gradient transition-all">
                   {member.name}
                 </h3>
-                <p className="text-primary font-medium mb-4">{member.role}</p>
+                
+                {/* Role Badge */}
+                <div className="inline-block mb-4">
+                  <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary font-medium text-sm">
+                    {member.role}
+                  </span>
+                </div>
+
+                {/* Bio */}
+                <p className="text-sm text-muted-foreground mb-6 min-h-12">
+                  {member.bio}
+                </p>
 
                 {/* Social Links */}
-                <div className="flex gap-3">
-                  <a
-                    href={member.social.github}
-                    className="w-10 h-10 rounded-lg bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
-                    aria-label="GitHub"
-                  >
-                    <Github className="w-5 h-5 text-muted-foreground group-hover/social:text-primary transition-colors" />
-                  </a>
+                <div className="flex gap-3 justify-center">
                   <a
                     href={member.social.linkedin}
-                    className="w-10 h-10 rounded-lg bg-muted hover:bg-secondary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-10 h-10 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-5 h-5 text-muted-foreground group-hover/social:text-secondary transition-colors" />
+                    <Linkedin className="w-5 h-5 text-muted-foreground group-hover/social:text-primary transition-colors" />
                   </a>
                   <a
                     href={`mailto:${member.social.email}`}
-                    className="w-10 h-10 rounded-lg bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-10 h-10 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="Email"
                   >
                     <Mail className="w-5 h-5 text-muted-foreground group-hover/social:text-accent transition-colors" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-muted hover:bg-secondary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-5 h-5 text-muted-foreground group-hover/social:text-secondary transition-colors" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    aria-label="Discord"
+                  >
+                    <SiDiscord className="w-5 h-5 text-muted-foreground group-hover/social:text-accent transition-colors" />
                   </a>
                 </div>
               </div>
