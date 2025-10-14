@@ -3,25 +3,25 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Github } f
 const sponsors = [
   { 
     name: "TechCorp", 
-    logo: "TC",
+    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=200&fit=crop",
     description: "Leading technology solutions for innovative startups and enterprises",
     contact: "+91 98765 11111"
   },
   { 
     name: "InnoVentures", 
-    logo: "IV",
+    logo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop",
     description: "Venture capital firm investing in cutting-edge tech innovations",
     contact: "+91 98765 22222"
   },
   { 
     name: "CodeBase", 
-    logo: "CB",
+    logo: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=200&fit=crop",
     description: "Developer tools and platforms for modern software development",
     contact: "+91 98765 33333"
   },
   { 
     name: "FutureStack", 
-    logo: "FS",
+    logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=200&fit=crop",
     description: "Cloud infrastructure and DevOps solutions for scalable applications",
     contact: "+91 98765 44444"
   }
@@ -43,10 +43,12 @@ export const Footer = () => {
                 className="flex flex-col rounded-xl bg-card/80 backdrop-blur-sm border-2 border-border overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 group"
               >
                 {/* Top Area - Logo */}
-                <div className="flex items-center justify-center p-8 bg-gradient-to-br from-card to-muted/30">
-                  <div className="w-full h-20 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-bold text-primary-foreground shadow-lg group-hover:glow-cyan transition-all">
-                    {sponsor.logo}
-                  </div>
+                <div className="h-40 bg-gradient-to-br from-card to-muted/30 overflow-hidden">
+                  <img 
+                    src={sponsor.logo} 
+                    alt={`${sponsor.name} logo`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 
                 {/* Middle Area - Description */}
