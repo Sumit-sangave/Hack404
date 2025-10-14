@@ -1,10 +1,30 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
 const sponsors = [
-  { name: "TechCorp", logo: "TC" },
-  { name: "InnoVentures", logo: "IV" },
-  { name: "CodeBase", logo: "CB" },
-  { name: "FutureStack", logo: "FS" }
+  { 
+    name: "TechCorp", 
+    logo: "TC",
+    description: "Leading technology solutions for innovative startups and enterprises",
+    contact: "+91 98765 11111"
+  },
+  { 
+    name: "InnoVentures", 
+    logo: "IV",
+    description: "Venture capital firm investing in cutting-edge tech innovations",
+    contact: "+91 98765 22222"
+  },
+  { 
+    name: "CodeBase", 
+    logo: "CB",
+    description: "Developer tools and platforms for modern software development",
+    contact: "+91 98765 33333"
+  },
+  { 
+    name: "FutureStack", 
+    logo: "FS",
+    description: "Cloud infrastructure and DevOps solutions for scalable applications",
+    contact: "+91 98765 44444"
+  }
 ];
 
 export const Footer = () => {
@@ -16,14 +36,34 @@ export const Footer = () => {
           <h3 className="text-2xl font-bold text-center mb-8 text-gradient">
             Our Sponsors
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {sponsors.map((sponsor, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-6 rounded-lg bg-card/50 backdrop-blur-sm border border-border card-hover"
+                className="flex flex-col rounded-xl bg-card/80 backdrop-blur-sm border-2 border-border overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 group"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-2xl font-bold text-primary-foreground">
-                  {sponsor.logo}
+                {/* Top Area - Logo */}
+                <div className="flex items-center justify-center p-8 bg-gradient-to-br from-card to-muted/30">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-bold text-primary-foreground shadow-lg group-hover:glow-cyan transition-all">
+                    {sponsor.logo}
+                  </div>
+                </div>
+                
+                {/* Middle Area - Description */}
+                <div className="flex-1 px-6 py-4 text-center">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {sponsor.description}
+                  </p>
+                </div>
+                
+                {/* Bottom Area - Name & Contact */}
+                <div className="px-6 py-4 bg-muted/30 border-t border-border/50">
+                  <h4 className="text-lg font-bold text-foreground mb-1 group-hover:text-gradient transition-all">
+                    {sponsor.name}
+                  </h4>
+                  <p className="text-sm text-primary font-medium">
+                    {sponsor.contact}
+                  </p>
                 </div>
               </div>
             ))}

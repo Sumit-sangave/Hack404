@@ -91,7 +91,7 @@ export const Team = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image Container */}
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
