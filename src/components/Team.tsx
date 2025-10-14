@@ -1,72 +1,105 @@
 import { Card } from "@/components/ui/card";
-import { Linkedin, Mail, Instagram } from "lucide-react";
-import { SiDiscord } from "react-icons/si";
+import { Linkedin, Mail, Github } from "lucide-react";
+
+// Import your team photos
+import vaibhavPhoto from "@/assets/team/vaibhav.jpg";
+import mayuriPhoto from "@/assets/team/mayuri.jpg";
+import sumitPhoto from "@/assets/team/sumit.jpg";
+import yashPhoto from "@/assets/team/yash.jpg";
+import ranjitPhoto from "@/assets/team/ranjit.jpg";
+import shitalPhoto from "@/assets/team/shital.jpg";
+import pritiPhoto from "@/assets/team/priti.jpg";
+import anhishekPhoto from "@/assets/team/abhishek.jpg";
+
+
 
 const teamMembers = [
   {
-    name: "Priya Sharma",
+    name: "Vaibhav Survase",
     role: "President",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+    image: vaibhavPhoto,
     bio: "Leading tech innovation and organizing impactful events",
     social: {
-      github: "#",
-      linkedin: "#",
-      email: "priya@hackathon.com"
+      github: "https://github.com/vsgmk",
+      linkedin: "https://www.linkedin.com/in/vaibhav-survase-1ba7142a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      email: "vaibhavsurvase674@gmail.com"
     }
   },
   {
-    name: "Rahul Kumar",
+    name: "Mayuri Kulkarni",
     role: "Vice President",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    image: mayuriPhoto,
     bio: "Coordinating operations and mentor relationships",
     social: {
-      github: "#",
-      linkedin: "#",
-      email: "rahul@hackathon.com"
+      github: "https://github.com/myukulkarni",
+      linkedin: "https://www.linkedin.com/in/mayuri-kulkarni-b72862302/",
+      email: "mayuri@hackathon.com"
     }
   },
   {
-    name: "Ananya Patel",
-    role: "Technical Lead",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-    bio: "Managing technical infrastructure and workshops",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "ananya@hackathon.com"
-    }
-  },
-  {
-    name: "Arjun Mehta",
-    role: "Marketing Head",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-    bio: "Building community and promoting events",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "arjun@hackathon.com"
-    }
-  },
-  {
-    name: "Sneha Reddy",
-    role: "Sponsorship Lead",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-    bio: "Securing partnerships and funding opportunities",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "sneha@hackathon.com"
-    }
-  },
-  {
-    name: "Vikram Singh",
-    role: "Events Coordinator",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    name: "Shital Chavan",
+    role: "Member",
+    image: shitalPhoto,
     bio: "Planning logistics and participant experience",
     social: {
-      github: "#",
-      linkedin: "#",
-      email: "vikram@hackathon.com"
+      github: "https://github.com/shital-chavan-11",
+      linkedin: "https://www.linkedin.com/in/shital-chavan-00a23b334",
+      email: "chavanshital3108@gmail.com"
+    } 
+  },
+  {
+    name: "Priti Chaugule",
+    role: "Member",
+    image: pritiPhoto,
+    bio: "Creating stunning visuals and user experiences",
+    social: {
+      github: " https://github.com/pritichaugule12",
+      linkedin: "https://www.linkedin.com/in/priti-chaugule-2966872a4/",
+      email: "pritichaugule44@gmail.com"
+    }
+  },
+  {
+    name: "Ranjit Chavan",
+    role: "Member",
+    image: ranjitPhoto,
+    bio: "Securing partnerships and funding opportunities",
+    social: {
+      github: "https://github.com/RanjitChavan1818",
+      linkedin: "https://www.linkedin.com/in/ranjit-chavan-9746872a4/ ",
+      email: "ranjitchavan1050@gmail.com"
+    }
+  },
+  {
+    name: "Sumit Sangave",
+    role: "Member",
+    image: sumitPhoto,
+    bio: "Managing technical infrastructure and workshops",
+    social: {
+      github: "https://github.com/Sumit-sangave",
+      linkedin: "https://www.linkedin.com/in/sumit-sangave-8667142a3/",
+      email: "sumitsangave2631@gmail.com"
+    }
+  },
+  {
+    name: "Yash Munurreddy",
+    role: "Member",
+    image: yashPhoto,
+    bio: "Building community and promoting events",
+    social: {
+      github: " https://github.com/YashReddy1963",
+      linkedin: "https://www.linkedin.com/in/yash-m-81371624a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      email: "member4@hackathon.com"
+    }
+  },
+  {
+    name: "Abhishek Savalgi",
+    role: "Member",
+    image: anhishekPhoto,
+    bio: "Building connections and fostering community engagement",
+    social: {
+      github: "github.com/Abhishek591549",
+      linkedin: "https://www.linkedin.com/in/abhishek-savalgi-1406b82a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      email: "abhisheksavalgi601@gmail.com"
     }
   }
 ];
@@ -84,16 +117,16 @@ export const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-12 gap-y-24 pt-12">
           {teamMembers.map((member, index) => (
             <Card
               key={index}
-              className="group relative bg-card/80 backdrop-blur-sm border-2 border-border transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 pt-16 pb-6 px-6"
+              className="group relative bg-card/80 backdrop-blur-sm border-2 border-border transition-all duration-300 hover:scale-105 hover:shadow-2xl pt-24 pb-6 px-6"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Circular Image - Overlapping top */}
-              <div className="absolute -top-12 left-1/2 -translate-x-1/2">
-                <div className="relative w-24 h-24 rounded-full border-4 border-card overflow-hidden shadow-xl group-hover:glow-cyan transition-all">
+              <div className="absolute -top-20 left-1/2 -translate-x-1/2">
+                <div className="relative w-40 h-40 rounded-full border-4 border-card overflow-hidden shadow-xl transition-all">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -117,40 +150,31 @@ export const Team = () => {
                 </div>
 
                 {/* Social Links */}
-                <div className="flex gap-2 justify-center">
+                <div className="flex gap-3 justify-center">
                   <a
                     href={member.social.linkedin}
-                    className="w-9 h-9 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-12 h-12 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-4 h-4 text-muted-foreground group-hover/social:text-primary transition-colors" />
+                    <Linkedin className="w-5 h-5 text-muted-foreground group-hover/social:text-primary transition-colors" />
+                  </a>
+                  <a
+                    href={member.social.github}
+                    className="w-12 h-12 rounded-full bg-muted hover:bg-secondary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-5 h-5 text-muted-foreground group-hover/social:text-secondary transition-colors" />
                   </a>
                   <a
                     href={`mailto:${member.social.email}`}
-                    className="w-9 h-9 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
+                    className="w-12 h-12 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
                     aria-label="Email"
                   >
-                    <Mail className="w-4 h-4 text-muted-foreground group-hover/social:text-accent transition-colors" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-9 h-9 rounded-full bg-muted hover:bg-secondary/20 flex items-center justify-center transition-all hover:scale-110 group/social"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-4 h-4 text-muted-foreground group-hover/social:text-secondary transition-colors" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-9 h-9 rounded-full bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group/social"
-                    aria-label="Discord"
-                  >
-                    <SiDiscord className="w-4 h-4 text-muted-foreground group-hover/social:text-accent transition-colors" />
+                    <Mail className="w-5 h-5 text-muted-foreground group-hover/social:text-primary transition-colors" />
                   </a>
                 </div>
               </div>
 
-              {/* Border glow effect */}
-              <div className="absolute inset-0 rounded-lg border-2 border-primary/0 group-hover:border-primary/50 transition-all duration-300 pointer-events-none"></div>
             </Card>
           ))}
         </div>

@@ -1,10 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/logo.png";
 
 export const Hero = () => {
   const scrollToRegistration = () => {
     document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToThemes = () => {
+    document.getElementById('themes')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -31,17 +36,37 @@ export const Hero = () => {
           <span className="text-sm text-muted-foreground">Registration Open Now!</span>
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 text-gradient leading-tight">
-          HACKATHON 2025
-        </h1>
+        {/* Main Content - Logo and Title Side by Side */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 mb-8">
+          {/* Logo - Left Side */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="bg-black rounded-full p-4 shadow-2xl border-2 border-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+                <img 
+                  src={logo} 
+                  alt="Hack404 Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Hack404 Title - Right Side */}
+          <div className="flex justify-center lg:justify-start">
+            <h1 className="text-6xl md:text-8xl font-bold text-gradient leading-tight">
+              <span className="inline-block hacker-text" data-text="Hack404">
+                Hack404
+              </span>
+            </h1>
+          </div>
+        </div>
 
         <p className="text-xl md:text-2xl mb-4 text-muted-foreground max-w-3xl mx-auto">
-          Code the Future. Build the Impossible.
+            The Ultimate Hackathon Battleground
         </p>
 
         <p className="text-lg mb-12 text-muted-foreground/80 max-w-2xl mx-auto">
-          Join the ultimate 48-hour coding challenge where innovation meets technology.
-          Compete, collaborate, and create groundbreaking solutions!
+        A platform for passionate developers, designers, and thinkers to solve real-world challenges. At Hack404, we believe every 404 isn’t a failure — it’s the start of something new.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -59,6 +84,7 @@ export const Hero = () => {
             variant="neon" 
             size="lg" 
             className="text-lg px-8 py-6"
+            onClick={scrollToThemes}
           >
             View Themes
           </Button>
@@ -67,16 +93,16 @@ export const Hero = () => {
         {/* Stats */}
         <div className="mt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
           <div className="p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20">
-            <div className="text-4xl font-bold text-gradient mb-2">48</div>
+            <div className="text-4xl font-bold text-gradient mb-2">12</div>
             <div className="text-sm text-muted-foreground">Hours</div>
           </div>
           <div className="p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-secondary/20">
-            <div className="text-4xl font-bold text-gradient mb-2">₹50K</div>
-            <div className="text-sm text-muted-foreground">Prize Pool</div>
+            <div className="text-4xl font-bold text-gradient mb-2">4+</div>
+            <div className="text-sm text-muted-foreground">Core Trakcs</div>
           </div>
           <div className="p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-accent/20">
-            <div className="text-4xl font-bold text-gradient mb-2">500+</div>
-            <div className="text-sm text-muted-foreground">Participants</div>
+            <div className="text-4xl font-bold text-gradient mb-2">40+</div>
+            <div className="text-sm text-muted-foreground">Student Innovators</div>
           </div>
         </div>
       </div>

@@ -5,21 +5,21 @@ const features = [
   {
     icon: Calendar,
     title: "Event Date",
-    description: "March 15-17, 2025",
+    description: "TBH",
     color: "text-primary",
     glow: "glow-cyan"
   },
   {
     icon: Clock,
     title: "Duration",
-    description: "48 Hours Non-Stop",
+    description: "12 Hours",
     color: "text-secondary",
     glow: "glow-pink"
   },
   {
     icon: Trophy,
     title: "Prizes",
-    description: "₹50,000+ Worth Prizes",
+    description: "Exicting Prizes",
     color: "text-accent",
     glow: "glow-purple"
   },
@@ -64,24 +64,36 @@ export const About = () => {
             <h3 className="text-3xl font-bold mb-6 text-gradient">Hackathon Rules</h3>
             <ul className="space-y-4 text-lg text-muted-foreground">
               <li className="flex items-start gap-3">
-                <span className="text-primary text-2xl">•</span>
-                <span>Teams must consist of 2-4 members from any educational institution</span>
+                <span className="text-primary text-2xl">◾</span>
+                <span>Each team can have up to 4 members.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-secondary text-2xl">•</span>
-                <span>All code must be written during the 48-hour event period</span>
+                <span className="text-secondary text-2xl">◾</span>
+                <span>Only one form per team should be submitted.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-accent text-2xl">•</span>
-                <span>Projects must align with one of the provided themes</span>
+                <span className="text-accent text-2xl">◾</span>
+                <span>Team leader's contact will be used for communication.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-primary text-2xl">•</span>
-                <span>Final submissions must include working demo, code repository, and presentation</span>
+                <span className="text-primary text-2xl">◾</span>
+                <span>Ideas must be original and innovative — plagiarism leads to disqualification.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-secondary text-2xl">•</span>
-                <span>Mentorship and workshops will be available throughout the event</span>
+                <span className="text-secondary text-2xl">◾</span>
+                <span>Once registered, team details cannot be changed.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent text-2xl">◾</span>
+                <span>Hackathon duration: 12 hours continuous coding challenge.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary text-2xl">◾</span>
+                <span>Judges' decision is final.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-secondary text-2xl">◾</span>
+                <span>Maintain teamwork, discipline, and enthusiasm throughout.</span>
               </li>
             </ul>
           </div>

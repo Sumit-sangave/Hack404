@@ -1,53 +1,106 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
+// Import sponsor logos
+import dipakFootwearLogo from "@/assets/sponcors/dipakfootwear.jpg";
+import ganeshLogo from "@/assets/sponcors/ganesh.jpg";
+import sarthakLogo from "@/assets/sponcors/sarthak.jpg";
+import subhaPetroleumLogo from "@/assets/sponcors/subhaPetroleum.jpg";
+
 const sponsors = [
   { 
-    name: "TechCorp", 
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=200&fit=crop",
-    description: "Leading technology solutions for innovative startups and enterprises",
-    contact: "+91 98765 11111"
+    name: "Dipak Footwear", 
+    logo: dipakFootwearLogo,
+    description: "Dipak Footwear Javala A/P.Javala tal.Sangola Dist.Solapur",
+    contact: "+91 8446690401",
+    isWide: true
   },
   { 
-    name: "InnoVentures", 
-    logo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop",
-    description: "Venture capital firm investing in cutting-edge tech innovations",
-    contact: "+91 98765 22222"
+    name: "Shree Ganesh Krushi Kendra", 
+    logo: ganeshLogo,
+    description: "Shree Ganesh Krushi Kendra, A/P.Tavashi tal.Pandharpur Dist.Solapur",
+    contact: "+91 7387034881",
+    isWide: true
   },
   { 
-    name: "CodeBase", 
-    logo: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=200&fit=crop",
-    description: "Developer tools and platforms for modern software development",
-    contact: "+91 98765 33333"
+    name: "Sarthak Krushi Kendra", 
+    logo: sarthakLogo,
+    description: "Sarthak Krushi Kendra, A/P.Tavashi tal.Pandharpur Dist.Solapur",
+    contact: "+91 7387904319",
+    isWide: false
   },
   { 
-    name: "FutureStack", 
-    logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=200&fit=crop",
-    description: "Cloud infrastructure and DevOps solutions for scalable applications",
-    contact: "+91 98765 44444"
+    name: "Subha Petroleum", 
+    logo: subhaPetroleumLogo,
+    description: "Petroleum products and fuel distribution services",
+    contact: "+91 98765 44444",
+    isWide: false
   }
 ];
 
 export const Footer = () => {
   return (
-    <footer className="relative mt-20 border-t border-border/50">
+    <footer className="relative mt-8">
       {/* Sponsors Section */}
-      <div className="py-12 px-4 bg-gradient-to-b from-background to-card/50">
+      <div className="py-12 px-4 relative">
         <div className="container mx-auto max-w-6xl">
-          <h3 className="text-2xl font-bold text-center mb-8 text-gradient">
-            Our Sponsors
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sponsors.map((sponsor, index) => (
+          <div className="text-center mb-16 animate-slide-in">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">
+              Our Sponsors
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Proudly supported by our amazing partners
+            </p>
+          </div>
+          
+          {/* First Row - 2 Wider Sponsors */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-5xl mx-auto">
+            {sponsors.filter(sponsor => sponsor.isWide).map((sponsor, index) => (
               <div
                 key={index}
                 className="flex flex-col rounded-xl bg-card/80 backdrop-blur-sm border-2 border-border overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 group"
               >
                 {/* Top Area - Logo */}
-                <div className="h-40 bg-gradient-to-br from-card to-muted/30 overflow-hidden">
+                <div className="h-48 bg-gradient-to-br from-card to-muted/30 overflow-hidden flex items-center justify-center p-4">
                   <img 
                     src={sponsor.logo} 
                     alt={`${sponsor.name} logo`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
+                {/* Middle Area - Description */}
+                <div className="flex-1 px-6 py-4 text-center">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {sponsor.description}
+                  </p>
+                </div>
+                
+                {/* Bottom Area - Name & Contact */}
+                <div className="px-6 py-4 bg-muted/30 border-t border-border/50">
+                  <h4 className="text-lg font-bold text-foreground mb-1 group-hover:text-gradient transition-all">
+                    {sponsor.name}
+                  </h4>
+                  <p className="text-sm text-primary font-medium">
+                    {sponsor.contact}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Second Row - 2 Regular Sponsors */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {sponsors.filter(sponsor => !sponsor.isWide).map((sponsor, index) => (
+              <div
+                key={index}
+                className="flex flex-col rounded-xl bg-card/80 backdrop-blur-sm border-2 border-border overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 group"
+              >
+                {/* Top Area - Logo */}
+                <div className="h-40 bg-gradient-to-br from-card to-muted/30 overflow-hidden flex items-center justify-center p-4">
+                  <img 
+                    src={sponsor.logo} 
+                    alt={`${sponsor.name} logo`}
+                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 
@@ -83,15 +136,15 @@ export const Footer = () => {
               <div className="space-y-3 text-muted-foreground">
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>info@hackathon2025.com</span>
+                  <span>hackbreakers7@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 8087320580</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-primary" />
-                  <span>Tech Campus, Innovation Hub, Bangalore</span>
+                  <span>SKNSCOE, Pandharpur</span>
                 </div>
               </div>
             </div>
@@ -109,15 +162,7 @@ export const Footer = () => {
                 <li>
                   <a href="#registration" className="hover:text-primary transition-colors">Register</a>
                 </li>
-                <li>
-                  <a href="#team" className="hover:text-primary transition-colors">Team</a>
-                </li>
-              <li>
-                <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
-              </li>
-              <li>
-                <a href="/admin" className="hover:text-primary transition-colors">Admin</a>
-              </li>
+
               </ul>
             </div>
 
@@ -129,28 +174,7 @@ export const Footer = () => {
               </p>
               <div className="flex gap-3">
                 <a
-                  href="#"
-                  className="w-10 h-10 rounded-lg bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-lg bg-muted hover:bg-secondary/20 flex items-center justify-center transition-all hover:scale-110 group"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5 text-muted-foreground group-hover:text-secondary transition-colors" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-lg bg-muted hover:bg-accent/20 flex items-center justify-center transition-all hover:scale-110 group"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.linkedin.com/company/hackbreakers/?viewAsMember=true"
                   className="w-10 h-10 rounded-lg bg-muted hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110 group"
                   aria-label="LinkedIn"
                 >
@@ -168,15 +192,10 @@ export const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
-              © 2025 Hackathon. All rights reserved.
+          <div className="pt-8 text-center">
+            <p className="text-muted-foreground text-lg">
+              Made with love HackBreakers💜
             </p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-primary transition-colors">Code of Conduct</a>
-            </div>
           </div>
         </div>
       </div>

@@ -4,32 +4,32 @@ import { Brain, Cpu, Leaf, Smartphone, Globe, Zap } from "lucide-react";
 const themes = [
   {
     icon: Brain,
-    title: "Artificial Intelligence",
-    description: "Develop intelligent solutions using ML, NLP, and computer vision to solve real-world problems",
+    title: " Education & Learning",
+    description: "Empower the next generation of learners through innovation. Build tools and platforms that make education more accessible, interactive, and personalized, shaping how knowledge is shared and experienced.",
     color: "text-primary",
     borderColor: "border-primary/30",
     bgGlow: "bg-primary/5"
   },
   {
     icon: Cpu,
-    title: "Robotics & Automation",
-    description: "Create autonomous systems and robotic solutions that enhance efficiency and productivity",
+    title: "DevTools & Automation",
+    description: "Reimagine productivity for developers and teams. Create solutions that simplify workflows, automate repetitive tasks, and enhance the efficiency of building, testing, and deploying software.",
     color: "text-secondary",
     borderColor: "border-secondary/30",
     bgGlow: "bg-secondary/5"
   },
   {
     icon: Smartphone,
-    title: "Internet of Things",
-    description: "Build connected smart devices and IoT ecosystems for homes, cities, and industries",
+    title: "Healthcare & BioTech",
+    description: "Leverage technology to improve lives. From health monitoring and diagnostics to AI-driven solutions for medical challenges, — bring ideas that make healthcare smarter, faster, and more human-centric.",
     color: "text-accent",
     borderColor: "border-accent/30",
     bgGlow: "bg-accent/5"
   },
   {
     icon: Leaf,
-    title: "Sustainability",
-    description: "Design eco-friendly tech solutions addressing climate change and environmental challenges",
+    title: "Agriculture & Sustainability",
+    description: "Innovate for a greener tomorrow. Design systems and applications that support sustainable farming, optimize resource usage, and contribute to a more balanced and eco-friendly planet.",
     color: "text-primary",
     borderColor: "border-primary/30",
     bgGlow: "bg-primary/5"
@@ -54,7 +54,7 @@ const themes = [
 
 export const Themes = () => {
   return (
-    <section className="py-20 px-4 relative">
+    <section id="themes" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 animate-slide-in">
           <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">

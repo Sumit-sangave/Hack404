@@ -10,12 +10,13 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
 const themes = [
-  "Artificial Intelligence",
-  "Robotics & Automation",
-  "Internet of Things",
-  "Sustainability",
+  "Education & Learning",
+  "DevTools & Automation",
+  "Healthcare & BioTech",
+  "Agriculture & Sustainability",
   "Social Impact",
-  "Emerging Tech"
+  "Emerging Tech",
+  "Other"
 ];
 
 export const Registration = () => {
