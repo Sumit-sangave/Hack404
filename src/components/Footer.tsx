@@ -44,7 +44,7 @@ export const Footer = () => {
               >
                 {/* Top Area - Logo */}
                 <div className="flex items-center justify-center p-8 bg-gradient-to-br from-card to-muted/30">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-bold text-primary-foreground shadow-lg group-hover:glow-cyan transition-all">
+                  <div className="w-full h-20 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-bold text-primary-foreground shadow-lg group-hover:glow-cyan transition-all">
                     {sponsor.logo}
                   </div>
                 </div>
