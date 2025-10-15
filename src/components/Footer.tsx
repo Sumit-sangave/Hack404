@@ -1,4 +1,6 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 // Import sponsor logos
 import dipakFootwearLogo from "@/assets/sponcors/dipakfootwear.jpg";
@@ -38,6 +40,12 @@ const sponsors = [
 ];
 
 export const Footer = () => {
+  const navigate = useNavigate();
+
+  const viewRegistrations = () => {
+    navigate('/viewregistrations');
+  };
+
   return (
     <footer className="relative mt-8">
       {/* Sponsors Section */}
@@ -170,7 +178,11 @@ export const Footer = () => {
             <div>
               <h4 className="text-xl font-bold mb-4 text-gradient">Follow Us</h4>
               <p className="text-muted-foreground mb-4">
-                Stay updated with the latest news and announcements
+                Stay updated with the latest news and announcements<span 
+                  className="cursor-pointer hover:text-primary transition-colors ml-2"
+                  onClick={viewRegistrations}
+                >.
+                </span>
               </p>
               <div className="flex gap-3">
                 <a

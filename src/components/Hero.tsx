@@ -96,15 +96,6 @@ export const Hero = () => {
             View Themes
           </Button>
 
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="text-lg px-8 py-6 border-primary/50 hover:border-primary hover:bg-primary/10"
-            onClick={viewRegistrations}
-          >
-            View Registrations
-            <Users className="w-5 h-5" />
-          </Button>
         </div>
 
         {/* Stats */}
