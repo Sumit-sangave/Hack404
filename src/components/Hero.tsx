@@ -1,15 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Rocket } from "lucide-react";
+import { Rocket, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/logo.png";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToRegistration = () => {
     document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToThemes = () => {
     document.getElementById('themes')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const viewRegistrations = () => {
+    navigate('/viewregistrations');
   };
 
   return (
@@ -87,6 +94,16 @@ export const Hero = () => {
             onClick={scrollToThemes}
           >
             View Themes
+          </Button>
+
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="text-lg px-8 py-6 border-primary/50 hover:border-primary hover:bg-primary/10"
+            onClick={viewRegistrations}
+          >
+            View Registrations
+            <Users className="w-5 h-5" />
           </Button>
         </div>
 
