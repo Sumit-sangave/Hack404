@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/Hack404/" />
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // SPA GitHub Pages redirect script
+      var segmentCount = 1; // number of folders in your repo name (here: /Hack404/)
+      var l = window.location;
+      var repo = '/Hack404';
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        repo + '/?p=' + l.pathname.slice(repo.length + 1).replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
   </head>
+  <body></body>
 </html>
