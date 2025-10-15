@@ -1,47 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- ✅ GitHub Pages SPA redirect handler -->
-    <script type="text/javascript">
-      (function (location) {
-        if (location.search[1] === "p") {
-          var params = location.search
-            .slice(1)
-            .split("&")
-            .reduce(function (a, b) {
-              var p = b.split("=");
-              a[p[0]] = p[1];
-              return a;
-            }, {});
-          var path = (params.p || "").replace(/~and~/g, "&");
-          var query = params.q ? "?" + params.q.replace(/~and~/g, "&") : "";
-          window.history.replaceState(null, null, path + query + location.hash);
-        }
-      })(window.location);
-    </script>
-
-    <!-- ✅ Your normal head content -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hack404 - Code the Future</title>
-    <meta
-      name="description"
-      content="Join the ultimate 12-hour coding challenge. Compete, collaborate, and create groundbreaking solutions in AI, Robotics, IoT, Sustainability, and more."
-    />
+    <meta name="description" content="Join the ultimate 12-hour coding challenge. Compete, collaborate, and create groundbreaking solutions in AI, Robotics, IoT, Sustainability, and more." />
     <meta name="author" content="HackBreakers" />
     <link rel="icon" type="image/png" href="/Hack404/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <meta property="og:title" content="Hack404 - Code the Future" />
-    <meta
-      property="og:description"
-      content="Join the ultimate 12-hour coding challenge. Register now for Hack404!"
-    />
+    <meta property="og:description" content="Join the ultimate 12-hour coding challenge. Register now for Hack404!" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/favicon.png" />
 
